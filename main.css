@@ -51,6 +51,11 @@ button:hover {
 }
 
 .search-result {
+  display: block;
   background-color:lightblue;
   color:red;
+}
+
+.no-results {
+  display: none;
 }
