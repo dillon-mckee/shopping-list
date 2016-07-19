@@ -25,10 +25,10 @@ $('.shopping-list').on('click','.shopping-item-delete',function(event) {
 $('.shopping-list').on('click','.shopping-item-toggle', function(event) {
     $(this).closest("li").find(".shopping-item").toggleClass("shopping-item__checked");
 });
-$('.shopping-list').on('click','.toggle-checked', function(event) {
-    $(this).find(".shopping-item__checked").toggleClass("item-hide");
+$('body').on('click','button.toggle-checked', function(event) {
+    $('.shopping-list').find(".shopping-item__checked").closest("li").toggleClass("item-hide");
 });
-$('.shopping-list').on('click','.toggle-unchecked', function(event) {
-    $(this).find(".shopping-item").toggleClass("item-hide");
+$('body').on('click','button.toggle-unchecked', function(event) {
+    $('.shopping-list').find("span[class='shopping-item']").closest("li").toggleClass("item-hide");
 });
 });
