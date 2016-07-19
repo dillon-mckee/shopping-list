@@ -25,10 +25,24 @@ $('.shopping-list').on('click','.shopping-item-delete',function(event) {
 $('.shopping-list').on('click','.shopping-item-toggle', function(event) {
     $(this).closest("li").find(".shopping-item").toggleClass("shopping-item__checked");
 });
+
 $('body').on('click','button.toggle-checked', function(event) {
     $('.shopping-list').find(".shopping-item__checked").closest("li").toggleClass("item-hide");
-});
+})
+
 $('body').on('click','button.toggle-unchecked', function(event) {
     $('.shopping-list').find("span[class='shopping-item']").closest("li").toggleClass("item-hide");
 });
+
+$('#js-shopping-search-form').submit(function(event) {
+   event.preventDefault();
+   var searchValue = $("#shopping-search-entry").val();
+   if (searchValue == "") {return;};
+    $('body').find(".search-result").toggleClass("search-result");
+   console.log(searchValue);
+   $('.shopping-list').find("span:contains('"+ searchValue +"')").closest("li").toggleClass("search-result");
+   $(this)[0].reset(); 
+});
+
+//end
 });

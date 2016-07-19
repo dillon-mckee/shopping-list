@@ -49,3 +49,8 @@ button:hover {
 .item-hide {
   display: none;
 }
+
+.search-result {
+  background-color:lightblue;
+  color:red;
+}
